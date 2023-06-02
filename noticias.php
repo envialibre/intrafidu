@@ -39,10 +39,14 @@ the_post();
 					setup_postdata( $post );
 					?>
 					<div class="noti-principal">
-					<div><?php echo get_the_post_thumbnail( $post->ID, 'full', array( 'class' => 'img-fluid' ) ); ?></div>
-						<div><span><?php echo esc_html( get_the_date() ); ?></span></div>
-						<div><h2><?php  echo esc_html( get_the_title() ); ?></h2></div>
-						<div><p><?php echo esc_html( get_the_excerpt()); ?></p></div>
+						<div class="img-masreciente"><?php echo get_the_post_thumbnail( $post->ID, 'full', array( 'class' => 'img-fluid' ) ); ?></div>
+					<div class="box-recientes">
+						<div class="fecha-masreciente"><span><?php echo esc_html( get_the_date() ); ?></span></div>
+						<div class="titulo-masreciente"><h2><?php  echo esc_html( get_the_title() ); ?></h2></div>
+						<div class="txt-masreciente"><p><?php echo esc_html( get_the_excerpt()); ?></p></div>
+				    </div>
+
+
 					</div>
 				<?php
 				endforeach; 
@@ -59,12 +63,35 @@ the_post();
 
 			<div class="row">
 				<div class="col-md-12">
-					
+				   <span class="subtitulos">Otras Noticias</span>
 				</div>
-				<div class="col-md-5">
+				
+				Revisar
 
-				</div>
+				<div class="col-md-5">
+						<div class="img-otrasnoticias1"><?php echo get_the_post_thumbnail( $post->ID, 'full', array( 'class' => 'img-fluid' ) ); ?></div>
+					<div class="box-otrasnoticias1">
+						<div class="fecha-otrasnoticias1"><span><?php echo esc_html( get_the_date() ); ?></span></div>
+						<div class="titulo-otrasnoticias1"><h2><?php  echo esc_html( get_the_title() ); ?></h2></div>
+						<div class="txt-otrasnoticias1"><p><?php echo esc_html( get_the_excerpt()); ?></p></div>
+				    </div>
+
+				<div class="col-md-5">
+					<div class="img-otrasnoticias1"><?php echo get_the_post_thumbnail( $post->ID, 'full', array( 'class' => 'img-fluid' ) ); ?></div>
+					<div class="box-otrasnoticias1">
+						<div class="fecha-otrasnoticias1"><span><?php echo esc_html( get_the_date() ); ?></span></div>
+						<div class="titulo-otrasnoticias1"><h2><?php  echo esc_html( get_the_title() ); ?></h2></div>
+						<div class="txt-otrasnoticias1"><p><?php echo esc_html( get_the_excerpt()); ?></p></div>
+				    </div>
+
 				<div class="col-md-7">
+					<div class="img-otrasnoticias1"><?php echo get_the_post_thumbnail( $post->ID, 'full', array( 'class' => 'img-fluid' ) ); ?></div>
+					<div class="box-otrasnoticias1">
+						<div class="fecha-otrasnoticias1"><span><?php echo esc_html( get_the_date() ); ?></span></div>
+						<div class="titulo-otrasnoticias1"><h2><?php  echo esc_html( get_the_title() ); ?></h2></div>
+						<div class="txt-otrasnoticias1"><p><?php echo esc_html( get_the_excerpt()); ?></p></div>
+				    </div>
+
 
 				</div>
 			</div>

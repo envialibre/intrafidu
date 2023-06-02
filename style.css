@@ -19,6 +19,42 @@ Text Domain: intranet
 
 /* From http://codex.wordpress.org/CSS */
 
+/* Noticias Principales */
+
+.titulo-masreciente {
+    font-weight: 700;
+    padding-top: 6px;
+}
+
+.box-recientes div {
+    padding-bottom: 10px;
+}
+
+.box-recientes {
+    padding: 20px;
+}
+
+.fecha-masreciente {
+    color: #ff8200;
+    font-weight: 700;
+}
+
+.subtitulos {
+    color: #ff8200;
+    padding-bottom: 20px;
+    display: inline-block;
+}
+
+.img-masreciente img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.noti-principal {
+    border-radius: 15px;
+    background-color: #e6e6e6;
+}
+
 body{
 	background: rgb(133,36,68);
 	background: linear-gradient(180deg, rgba(133,36,68,1) 24%, rgba(255,130,0,1) 100%);
