@@ -19,6 +19,36 @@ Text Domain: intranet
 
 /* From http://codex.wordpress.org/CSS */
 
+
+
+/*************Colores***************/
+.text-naranja{
+	color: #ff8200 !important;
+}
+.text-negro{
+	color: #000 !important;
+}
+
+.bg-gris{
+	background-color: #e6e6e6 !important;
+}
+
+
+/***********Botones*************/
+.btn-naranja {
+    background-color: #ff8200;
+    color: #fff;
+    border: 0;
+    padding: 5px 20px 8px 20px;
+    border-radius: 14px;
+    font-weight: 500;
+}
+.btn-naranja:hover {
+    background-color: #d36d00;
+	color: #fff;
+}
+
+
 /* Noticias Principales */
 
 .titulo-masreciente {
@@ -34,6 +64,10 @@ Text Domain: intranet
     padding: 20px;
 }
 
+header.entry-header {
+    padding: 0;
+}
+
 .fecha-masreciente {
     color: #ff8200;
     font-weight: 700;
@@ -41,7 +75,6 @@ Text Domain: intranet
 
 .subtitulos {
     color: #ff8200;
-    padding-bottom: 20px;
     display: inline-block;
 }
 
@@ -55,11 +88,48 @@ Text Domain: intranet
     background-color: #e6e6e6;
 }
 
+.img-otrasnoticias2 {
+    height: 320px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.box-noti2{
+	border-radius: 15px;
+	background-color: #e6e6e6;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: #ff8200 !important;
+    border-radius: 50%;
+}
+
+.carousel-indicators{
+	position: relative !important;
+}
+.row.box-noti2.mb-4 {
+    margin-left: 0px;
+}
+
 body{
 	background: rgb(133,36,68);
 	background: linear-gradient(180deg, rgba(133,36,68,1) 24%, rgba(255,130,0,1) 100%);
 	background-repeat: no-repeat;
 }
+p, a{
+	font-size: 0.8rem;
+}
+h1 {
+    margin: 0 !important;
+}
+
 header {
     padding-top: 35px;
 }
