@@ -6,6 +6,9 @@
 get_header();
 
 if ( have_posts() ) :
+
+	positronx_set_post_views(get_the_ID());
+
 	while ( have_posts() ) :
 		the_post();
 
@@ -33,7 +36,7 @@ if ( $count_posts->publish > '1' ) :
 			$prev_title = get_the_title( $prev_post->ID );
 	?>
 		<div class="pr-3">
-			<a class="previous-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr( $prev_title ); ?>">
+			<a class="previous-post btn btn-lg btn-light" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr( $prev_title ); ?>">
 				<span class="arrow">&larr;</span>
 				<span class="title"><?php echo wp_kses_post( $prev_title ); ?></span>
 			</a>
@@ -44,7 +47,7 @@ if ( $count_posts->publish > '1' ) :
 			$next_title = get_the_title( $next_post->ID );
 	?>
 		<div class="pl-3">
-			<a class="next-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
+			<a class="next-post btn btn-lg btn-light" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
 				<span class="title"><?php echo wp_kses_post( $next_title ); ?></span>
 				<span class="arrow">&rarr;</span>
 			</a>

@@ -280,7 +280,7 @@ if ( ! function_exists( 'intranet_article_posted_on' ) ) {
 	 */
 	function intranet_article_posted_on() {
 		printf(
-			wp_kses_post( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author-meta vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'intranet' ) ),
+			wp_kses_post( __( '<span class="sep">Publicado </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> por </span> <span class="author-meta vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'intranet' ) ),
 			esc_url( get_the_permalink() ),
 			esc_attr( get_the_date() . ' - ' . get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
@@ -540,5 +540,106 @@ function intranet_scripts_loader() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if (is_page('noticias')) {
+        // Enqueue your JavaScript file
+        wp_enqueue_script('owl-carousel', get_theme_file_uri( 'assets/js/owl.carousel.min.js' ), array(), $theme_version, true);
+		wp_enqueue_script('home-carrusel', get_theme_file_uri( 'assets/js/home-carrusel.js' ), array(), $theme_version, true);
+
+        // Enqueue your CSS file
+        wp_enqueue_style('owl-carousel-base', get_theme_file_uri( 'assets/css/owl.carousel.min.css' ), array(), $theme_version);
+		wp_enqueue_style('owl-carousel-theme', get_theme_file_uri( 'assets/css/owl.theme.default.min.css' ), array(), $theme_version);
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'intranet_scripts_loader' );
+
+
+function my_excerpt_length($length)
+{ 
+	return 20; 
+} 
+
+add_filter('excerpt_length', 'my_excerpt_length');
+
+function positronx_set_post_views($post_id) {
+    $count_key = 'wp_post_views_count';
+    $count = get_post_meta($post_id, $count_key, true);
+     
+    if($count == '') {
+        $count = 0;
+        delete_post_meta($post_id, $count_key);
+        add_post_meta($post_id, $count_key, '0');
+    } else {
+        $count++;
+        update_post_meta($post_id, $count_key, $count);
+    }
+}
+
+
+function positronx_track_post_views ($post_id) {
+    if ( !is_single() ) 
+    return;
+     
+    if ( empty ( $post_id) ) {
+        global $post;
+        $post_id = $post->ID;    
+    }
+     
+    positronx_set_post_views($post_id);
+}
+ 
+add_action( 'wp_head', 'positronx_track_post_views');
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function convertFechaToSpanishFormat($fecha) {
+    $fecha_timestamp = strtotime($fecha);
+    $day = date('j', $fecha_timestamp);
+    $month = date('F', $fecha_timestamp);
+    $year = date('Y', $fecha_timestamp);
+
+    $spanish_month = '';
+    switch ($month) {
+        case 'January':
+            $spanish_month = 'Enero';
+            break;
+        case 'February':
+            $spanish_month = 'Febrero';
+            break;
+        case 'March':
+            $spanish_month = 'Marzo';
+            break;
+        case 'April':
+            $spanish_month = 'Abril';
+            break;
+        case 'May':
+            $spanish_month = 'Mayo';
+            break;
+        case 'June':
+            $spanish_month = 'Junio';
+            break;
+        case 'July':
+            $spanish_month = 'Julio';
+            break;
+        case 'August':
+            $spanish_month = 'Agosto';
+            break;
+        case 'September':
+            $spanish_month = 'Septiembre';
+            break;
+        case 'October':
+            $spanish_month = 'Octubre';
+            break;
+        case 'November':
+            $spanish_month = 'Noviembre';
+            break;
+        case 'December':
+            $spanish_month = 'Diciembre';
+            break;
+    }
+
+    $formatted_fecha = $day . ' de ' . $spanish_month . ' de ' . $year;
+
+    return $formatted_fecha;
+}
+
