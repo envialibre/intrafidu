@@ -20,6 +20,86 @@ Text Domain: intranet
 /* From http://codex.wordpress.org/CSS */
 
 
+/************Aplicativos*************/
+.letra-aplicativo {
+    font-size: 3rem;
+    color: #fff;
+    background-color: #ff8200;
+    opacity: 0.6;
+    width: 70px;
+    height: 70px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+input.inp-filtrar-app::placeholder {
+	color:#fff;
+  }
+  input.inp-filtrar-app:focus-visible {
+    outline: none;
+}
+.inp-filtrar-app {
+	font-size: 0.8rem;
+    border: 0;
+    background-color: #ff8200;
+    border-radius: 19px;
+    padding: 4px 10px 4px 15px;
+    width: 100%;
+    color: #fff;
+}
+
+.hide-important{
+	display: none !important;
+}
+
+.box-aplicativos {
+    background-color: #e6e6e6;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.divider-hr{
+	border-bottom: 1px solid #ff8200;
+}
+
+/**********Bienestar*************/
+.titulo-item h5 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+.img-bienestar {
+	min-height: 250px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+/*******Escuela******/
+.titulo-item {
+    font-weight: 700;
+}
+
+.box-recursos .box-single-recurso:hover .img-links-1 {
+    display: none !important;
+}
+.box-recursos .box-single-recurso:hover .img-links-2 {
+    display: flex !important;
+}
+
+.img-links-1{
+	display: flex;
+}
+
+.img-links-2{
+	display: none;
+}
+
+
 
 /*************Colores***************/
 .text-naranja{
@@ -40,7 +120,7 @@ Text Domain: intranet
     color: #fff;
     border: 0;
     padding: 5px 20px 8px 20px;
-    border-radius: 14px;
+    border-radius: 10px;
     font-weight: 500;
 }
 .btn-naranja:hover {

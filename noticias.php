@@ -30,6 +30,7 @@ the_post();
 			<?php
 			$postslist = get_posts( array(
 				'posts_per_page' => 1,
+				'post_status' => 'publish',
 				'order'          => 'DESC',
 				'orderby'        => 'date'
 			) );
@@ -66,6 +67,7 @@ the_post();
 					<?php
 				$popularpostbyview = array(
 					'meta_key'  => 'wp_post_views_count', // set custom meta key
+					'post_status' => 'publish',
 					'orderby'    => 'meta_value_num',
 					'order'      => 'DESC',
 					'posts_per_page' => 1
@@ -106,6 +108,7 @@ the_post();
 			$postslist = get_posts( array(
 				'posts_per_page' => 2,
 				'order'          => 'DESC',
+				'post_status' => 'publish',
 				'orderby'        => 'date',
 				'offset'        => '1'
 			) );
@@ -143,6 +146,7 @@ the_post();
     <?php
     $postslist = get_posts(array(
       'posts_per_page' => 3,
+	  'post_status' => 'publish',
       'order' => 'DESC',
       'orderby' => 'date',
       'offset' => 3
@@ -207,6 +211,7 @@ the_post();
     <?php
     $postslist = get_posts(array(
       'posts_per_page' => 3,
+	  'post_status' => 'publish',
       'order' => 'DESC',
       'orderby' => 'date',
       'offset' => 3

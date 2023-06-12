@@ -39,6 +39,7 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
                     <?php
                     $args = array(
                         'posts_per_page' => 1,
+                        'post_status' => 'publish',
                         'post_type' => 'eventos', // Set the post type to 'eventos'
                         'orderby' => 'fecha', // Order by the 'fecha' meta value
                         'order' => 'ASC', // Ascending order
@@ -124,6 +125,7 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
 
                     $args = array(
                         'posts_per_page' => 4,
+                        'post_status' => 'publish',
                         'post_type' => 'eventos', // Set the post type to 'eventos'
                         'orderby' => 'fecha', // Order by the 'fecha' meta value
                         'order' => 'ASC', // Ascending order
