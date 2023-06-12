@@ -23,8 +23,8 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
                     <h1><?php echo esc_html( get_the_title() ); ?></h1>
                 </div>
 				
-				<div class="col-md-5 pt-5">
-					<h2><?php echo get_the_content(); ?></h2>
+				<div class="col-md-12 pt-5">
+					<h2><?php echo the_content(); ?></h2>
 				</div>                
                 
                 <div class="col-md-7">

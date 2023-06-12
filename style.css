@@ -20,6 +20,12 @@ Text Domain: intranet
 /* From http://codex.wordpress.org/CSS */
 
 
+li {
+    font-size: 1rem;
+    padding-bottom: 10px;
+}
+
+
 /************Aplicativos*************/
 .letra-aplicativo {
     font-size: 3rem;
