@@ -114,7 +114,7 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
 
 			<div class="row">
 				<div class="col-md-12 p-4">
-				   <span class="subtitulos">Otras Noticias</span>
+				   <span class="subtitulos">Otros Eventos</span>
 				</div>
 			</div>				
 
