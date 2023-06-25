@@ -4,7 +4,7 @@ Theme URI: https://them.es/starter
 Author: Ares Soluciones
 Author URI: https://aressoluciones.com
 Description: Intranet para Fiduprevisora
-Version: 3.3.5
+Version: 1.5
 Requires at least: 5.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -19,11 +19,113 @@ Text Domain: intranet
 
 /* From http://codex.wordpress.org/CSS */
 
+/**********Subheader********************/
+.buscar-subheader input{
+	background-color: #ff8200 !important;
+	border-radius: 20px;
+	font-size: 0.9rem;
+}
+.buscar-subheader input::placeholder{
+	color: #fff !important;
+	font-size: 0.9rem;	
+}
+.subheader-text{
+    margin-top: -38px !important;
+    border-radius: 20px;
+	font-size: 0.8rem;	
+}
+
+.subheader-hola{
+    margin-top: -38px !important;	
+}
+
+.zindex-1{
+	z-index: 1;
+}
+.zindex-3{
+	z-index: 3;
+}
+
+/*************Forms******************/
+form span strong {
+    padding-bottom: 14px;
+    display: inline-block;
+}
+input, select {
+    background-color: #eb9e77;
+    border: 0;
+    width: 100%;
+    padding: 8px;
+    border-radius: 13px;
+}
+
+select option,
+select option:hover{
+    background-color: #eb9e77;
+}
+
+input:focus-within, input:focus, input:focus-visible {
+    border: 0;
+	outline: 0 !important
+
+}
+input[type="submit"]{
+	width: auto !important;
+}
 
 li {
     font-size: 1rem;
     padding-bottom: 10px;
 }
+
+/************Breadcrumb***************/
+nav.breadcrumb,
+nav.breadcrumb a {
+    color: #000;
+    font-size: 0.8rem !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/************Interna noticias**********/
+
+.fecha-interna,
+.titu-otros-articulos
+{
+    color: #000;
+    font-size: 0.8rem !important;
+    font-weight: 700;	
+}
+
+.list-articles
+{
+    color: #000;
+    font-size: 0.7rem !important;
+    font-weight: 700;	
+}
+.border-radius-10{
+	border-radius: 12px;
+}
+.box-otros-articulos{
+	padding-left: 0 !important;
+}
+.box-otros-articulos li::before {
+    content: "";
+    background-color: #852444;
+    background-size: 8px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+.box-otros-articulos li {
+    list-style: none;
+    position: relative;
+    text-indent: 10px;
+}
+
 
 
 /************Aplicativos*************/
@@ -142,8 +244,13 @@ input.inp-filtrar-app::placeholder {
     padding-top: 6px;
 }
 
-.box-recientes div {
-    padding-bottom: 10px;
+.btn-abajo{
+	padding-top: 100px;
+}
+
+.box-recientes p,
+.box-recientes-2 p {
+    margin-bottom: 0;
 }
 
 .box-recientes {
@@ -481,4 +588,11 @@ a img.aligncenter {
 
 #footer ul li {
     list-style: none;
+}
+
+@media screen and (max-width:767px){
+	.btn-abajo{
+		padding-top: 20px;
+	}
+
 }

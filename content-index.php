@@ -14,14 +14,7 @@
 				if ( 'post' === get_post_type() ) :
 			?>
 				<div class="card-text entry-meta">
-					<?php
-						intranet_article_posted_on();
-
-						$num_comments = get_comments_number();
-						if ( comments_open() && $num_comments >= 1 ) :
-							echo ' <a href="' . esc_url( get_comments_link() ) . '" class="badge badge-pill bg-secondary float-end" title="' . esc_attr( sprintf( _n( '%s Comment', '%s Comments', $num_comments, 'intranet' ), $num_comments ) ) . '">' . $num_comments . '</a>';
-						endif;
-					?>
+				Fecha: <?php the_date();?>
 				</div><!-- /.entry-meta -->
 			<?php
 				endif;
@@ -43,7 +36,7 @@
 				<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'intranet' ) . '</span>', 'after' => '</div>' ) ); ?>
 			</div><!-- /.card-text -->
 			<footer class="entry-meta">
-				<a href="<?php the_permalink(); ?>" class="btn btn-outline-secondary"><?php esc_html_e( 'more', 'intranet' ); ?></a>
+				<a href="<?php the_permalink(); ?>" class="btn btn-outline-secondary"><?php esc_html_e( 'Ver más', 'intranet' ); ?></a>
 			</footer><!-- /.entry-meta -->
 		</div><!-- /.card-body -->
 	</div><!-- /.col -->

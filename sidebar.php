@@ -5,7 +5,7 @@
 
 if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() ) :
 ?>
-<div id="sidebar" class="col-md-2 order-md-first col-sm-12 order-sm-first">
+<div id="sidebar" class="col-md-2 order-md-first">
 	<?php
 		if ( is_active_sidebar( 'primary_widget_area' ) ) :
 	?>
@@ -19,11 +19,22 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 				<div class="profile-image-user">
 					<div class="img-rounded-profile" style="background-image: url(<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>)"></div>
 				</div>
-				<?php $user_info = get_userdata($user->ID); ?>
-				<?php $user_name = $user_info->display_name; ?>
-				<?php $user_email = $user_info->user_email; ?>
-				<div class="user-fullname"><?php echo $user_name; ?></div>	
-				<div class="user-email"><?php echo $user_email; ?></div>
+				<?php $user_info = get_userdata($user->ID);
+				
+				if (isset($user_info->display_name)){
+					$user_name = $user_info->display_name;
+				}else{
+					$user_name = 'Nombre: usuario no logueado';
+				}
+				
+				if (isset($user_info->user_email)){
+					$user_email = $user_info->user_email;
+				}else{
+					$user_email = 'Email: usuario no logueado';
+				}
+				?>
+				<div class="user-fullname"><?php if ( isset($user_name) ) {echo $user_name;} ?></div>	
+				<div class="user-email"><?php if ( isset($user_email) ) { echo $user_email; } ?></div>
 			</div>					
 
 			<?php endif;?>

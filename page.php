@@ -15,8 +15,9 @@ the_post();
 		get_sidebar();
 	?>
 
-	<div class="col-md-10 order-md-2 col-sm-12">
+	<div class="col-md-10 order-md-2">
 		<div id="post-<?php the_ID(); ?>" <?php post_class( 'content body-workspace' ); ?>>
+		<?php include('inc/subheader.php') ?>
 			<?php
 				the_content();
 

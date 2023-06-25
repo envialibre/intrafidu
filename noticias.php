@@ -15,13 +15,14 @@ the_post();
 		get_sidebar();
 	?>
 
-	<div class="col-md-10 order-md-2 col-sm-12">
+	<div class="col-md-10 order-md-2">
 		<div id="post-<?php the_ID(); ?>" <?php post_class( 'content body-workspace' ); ?>>
 			<?php
 				the_content();
 			?>
 
 			<div class="row">
+				<?php include('inc/subheader.php') ?>
 				<div class="col-md-12"><h1><?php echo esc_html( get_the_title() ); ?></h1></div>
 				<div class="col-md-7">
 					<div class="my-4">

@@ -15,21 +15,27 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
 		get_sidebar();
 	?>
 
-	<div class="col-md-10 order-md-2 col-sm-12">
+	<div class="col-md-10 order-md-2">
 		<div id="post-<?php the_ID(); ?>" <?php post_class( 'content body-workspace' ); ?>>
 			<?php
 				the_content();
 			?>
 
 			<div class="row">
+                <?php include('inc/subheader.php') ?>
 				<div class="col-md-12">
                     <h1><?php echo esc_html( get_the_title() ); ?></h1>
                 </div>
 				
 				<div class="col-md-5 pt-5">
-					<h2>Programate<br>
-                        y asiste a<br>
-                        nuestros eventos</h2>
+                    <div class="pt-4">
+                        <h2>Programate<br>
+                            y asiste a<br>
+                            nuestros eventos</h2>
+                    </div>
+                    <div class="pt-5">
+                    <img class="img-fluid px-5" src="<?php echo get_template_directory_uri().'/img/eventos.png' ?>" alt="eventos">
+                    </div>
 				</div>                
                 
                 <div class="col-md-7">
@@ -75,13 +81,11 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
                                                 <h2><?php echo esc_html(get_the_title()); ?></h2>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-xs-6">
-                                            <p class="pb-2"><strong>Lugar:</strong> <?php echo esc_html($lugar); ?></p>
-                                            <p class="pb-2"><strong>Fecha:</strong> <?php echo esc_html($formatted_fecha); ?></p>
-                                            <p class="pb-2"><strong>Hora:</strong> <?php echo esc_html($hora); ?></p>
-                                            <p class="pb-2"><strong>Modalidad: </strong><?php echo esc_html($modalidad); ?></p>
-                                        </div>
-                                        <div class="col-md-6 col-xs-6">
+                                        <div class="col-md-12 col-xs-12">
+                                            <p><strong>Lugar:</strong> <?php echo esc_html($lugar); ?></p>
+                                            <p><strong>Fecha:</strong> <?php echo esc_html($formatted_fecha); ?></p>
+                                            <p><strong>Hora:</strong> <?php echo esc_html($hora); ?></p>
+                                            <p><strong>Modalidad: </strong><?php echo esc_html($modalidad); ?></p>
                                             <div class="txt-masreciente">
                                                 <p>
                                                 <?php
@@ -93,7 +97,7 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
                                                 ?>                                              
                                                 </p>
                                             </div>  
-                                            <div class="ver-mas">
+                                            <div class="ver-mas pt-5">
                                                 <a class="btn-naranja" href="<?php echo esc_html(get_the_permalink()); ?>">Ver más</a>
                                             </div>
                                         </div>                                                                              
@@ -155,16 +159,16 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
 					<div class="row box-noti2 mb-4">
 						<div class="col-xs-6 col-md-6 img-otrasnoticias2" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID); ?>)"></div>
 						<div class="col-xs-6 col-md-6 box-otrasnoticias2 p-3">
-                            <div>
+                            <div class="box-recientes-2">
                                 <div class="titulo-masreciente pb-2">
                                     <h2><?php echo esc_html(get_the_title()); ?></h2>
                                 </div>                                
-                                <p class="pb-2"><strong>Lugar:</strong> <?php echo esc_html($lugar); ?></p>
-                                <p class="pb-2"><strong>Fecha:</strong> <?php echo esc_html($formatted_fecha); ?></p>
-                                <p class="pb-2"><strong>Hora:</strong> <?php echo esc_html($hora); ?></p>
-                                <p class="pb-2"><strong>Modalidad: </strong><?php echo esc_html($modalidad); ?></p>
+                                <p><strong>Lugar:</strong> <?php echo esc_html($lugar); ?></p>
+                                <p><strong>Fecha:</strong> <?php echo esc_html($formatted_fecha); ?></p>
+                                <p><strong>Hora:</strong> <?php echo esc_html($hora); ?></p>
+                                <p><strong>Modalidad: </strong><?php echo esc_html($modalidad); ?></p>
                             </div>
-                            <div class="ver-mas">
+                            <div class="ver-mas btn-abajo">
                                 <a class="btn-naranja" href="<?php echo esc_html(get_the_permalink()); ?>">Ver más</a>
                             </div>                            
 						</div>

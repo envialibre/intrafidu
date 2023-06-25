@@ -15,10 +15,11 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
 		get_sidebar();
 	?>
 
-	<div class="col-md-10 order-md-2 col-sm-12">
+	<div class="col-md-10 order-md-2">
 		<div id="post-<?php the_ID(); ?>" <?php post_class( 'content body-workspace' ); ?>>
 
 			<div class="row">
+				<?php include('inc/subheader.php') ?>
 				<div class="col-md-12">
                     <h1><?php echo esc_html( get_the_title() ); ?></h1>
                 </div>

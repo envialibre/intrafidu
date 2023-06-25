@@ -10,6 +10,7 @@ if ( is_readable( $theme_customizer ) ) {
 	require_once $theme_customizer;
 }
 
+
 if ( ! function_exists( 'intranet_setup_theme' ) ) {
 	/**
 	 * General Theme Settings.
@@ -553,6 +554,9 @@ function intranet_scripts_loader() {
 
 }
 add_action( 'wp_enqueue_scripts', 'intranet_scripts_loader' );
+
+
+
 
 
 function my_excerpt_length($length)

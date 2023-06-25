@@ -15,10 +15,11 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
 		get_sidebar();
 	?>
 
-	<div class="col-md-10 order-md-2 col-sm-12">
+	<div class="col-md-10 order-md-2">
 		<div id="post-<?php the_ID(); ?>" <?php post_class( 'content body-workspace' ); ?>>
 
 			<div class="row">
+				<?php include('inc/subheader.php') ?>
 				<div class="col-md-12">
                     <h1><?php echo esc_html( get_the_title() ); ?></h1>
                 </div>
@@ -68,7 +69,7 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
 							?>
 
 							<div class="col-md-4">
-								<div class="box-otrasnoticias2 p-3 d-flex align-content-between flex-wrap">
+								<div class="box-otrasnoticias2 p-3 ">
 									<div class="">
 										<div class="letra-aplicativo d-flex justify-content-center align-items-center mb-3"><?php echo $first_letter; ?></div>
 										<div class="titulo-item pb-2">
@@ -139,7 +140,7 @@ $current_date = date('Ymd'); // Get the current date in the format d/m/Y
 							<?php endif; ?>
 
 							<div class="col-md-4">
-								<div class="box-otrasnoticias2 p-3 d-flex align-content-between flex-wrap">
+								<div class="box-otrasnoticias2 p-3 ">
 									<div class="">
 										<div class="letra-aplicativo d-flex justify-content-center align-items-center mb-3"><?php echo $first_letter; ?></div>
 										<div class="titulo-item pb-2">
