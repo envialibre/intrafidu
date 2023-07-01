@@ -4,7 +4,7 @@ Theme URI: https://them.es/starter
 Author: Ares Soluciones
 Author URI: https://aressoluciones.com
 Description: Intranet para Fiduprevisora
-Version: 1.5
+Version: 1.6
 Requires at least: 5.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -18,6 +18,26 @@ Text Domain: intranet
 
 
 /* From http://codex.wordpress.org/CSS */
+
+/**************Home****************/
+.img-eventos-home {
+    height: 183px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.noticias-home {
+    background-color: #e6e6e6;
+    border-radius: 15px;
+} 
+.box-sideright-space{
+    padding-right: calc(var(--bs-gutter-x)*.5);    
+}
+.box-recientes-home {
+    background-color: #e6e6e6;
+}
 
 /**********Subheader********************/
 .buscar-subheader input{
@@ -105,6 +125,9 @@ nav.breadcrumb a {
 }
 .border-radius-10{
 	border-radius: 12px;
+}
+.border-radius-15{
+	border-radius: 15px;
 }
 .box-otros-articulos{
 	padding-left: 0 !important;
@@ -264,6 +287,7 @@ header.entry-header {
 .fecha-masreciente {
     color: #ff8200;
     font-weight: 700;
+    text-transform: capitalize;
 }
 
 .subtitulos {

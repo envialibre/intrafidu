@@ -92,6 +92,10 @@ the_post();
 				endif;
 				?>
 					</div>
+
+					<div class="pt-5">
+					<img class="img-fluid px-5" src="<?php echo get_template_directory_uri().'/img/noticias.png' ?>" alt="eventos">
+					</div>
 				</div>
 			</div>
 
@@ -183,7 +187,7 @@ the_post();
                   ?>
                 </p>
               </div>
-              <div class="ver-mas">
+              <div class="ver-mas py-3">
                 <a class="btn-naranja" href="<?php echo esc_html(get_the_permalink()); ?>">Ver más</a>
               </div>
             </div>
